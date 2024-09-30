@@ -1,7 +1,8 @@
-import Image from "next/image";
+import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [step, setStep] = useState(1);
   return (
     <>
       <form action={async (formData) => {
