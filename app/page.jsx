@@ -1,31 +1,29 @@
-"use client"
+"use client";
 import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
   const [step, setStep] = useState(1);
+
+  const handleSubmit = async (formData) => {
+    const passed = formData.get("passed");
+
+    if (step === 2 && passed === "no") {
+      setStep(3);
+    } 
+    else if (step === 2 && passed === "yes") {
+      setStep(4);
+    } 
+    else {
+      setStep((prev) => prev + 1);
+    }
+  };
+
   return (
     <>
-      <form action={async (formData) => {
-        // console.log(formData);
-        // const formObj = Object.fromEntries(formData);
-        // console.log(formObj);
-
-        // const response = await BasvuruYapAksiyonu(formObj);
-        // console.log(response);
-
-        // if (response?.errors) {
-        //   setErrorsState({
-        //     errors: response?.errors
-        //   })
-        //   return;
-        // }
-        
-        setStep(prev => prev + 1)
-
-      }} className="form-group">
-
+      <form action={(formData) => {handleSubmit(formData);}} className="form-group">
         <input type="hidden" name="step" value={step} />
+
         {step === 1 && (
           <>
             <label htmlFor="name">Ad:</label>
@@ -53,47 +51,48 @@ export default function Home() {
               </select>
             </label>
 
-            <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
+            <button type="submit">{step === 4 ? "Kaydet" : "İlerle"}</button>
           </>
         )}
 
         {step === 2 && (
           <>
-            <label htmlFor="exam">ön sınav puanı:</label>
+            <label htmlFor="exam">Ön sınav puanı:</label>
             <input type="number" name="exam" id="exam" />
             <br />
 
-            <label htmlFor="interview">mülakat notları:</label>
+            <label htmlFor="interview">Mülakat notları:</label>
             <textarea name="interview" id="interview" cols="20"></textarea>
             <br />
 
-            <label htmlFor="interviewScore">mülakat puanı:</label>
+            <label htmlFor="interviewScore">Mülakat puanı:</label>
             <input type="number" name="interviewScore" id="interviewScore" />
             <br />
 
-            <p>mülakattan geçti mi:</p>
+            <p>Mülakattan geçti mi:</p>
             <input type="radio" id="yes" name="passed" value="yes" />
-            <label htmlFor="yes">yes</label><br />
+            <label htmlFor="yes">Evet</label>
+            <br />
 
             <input type="radio" id="no" name="passed" value="no" />
-            <label htmlFor="no">no</label><br />
+            <label htmlFor="no">Hayır</label>
+            <br />
 
-            <button onClick={{}}>{step === 4 ? "Kaydet" : "İlerle"}</button>
+            <button type="submit">İlerle</button>
           </>
         )}
 
         {step === 3 && (
           <>
             <p>3. sayfa</p>
-            <h3>form kaydedildi</h3>
-            <button onClick={() => setStep(1)}>deneme</button>
+            <h3>Form kaydedildi</h3>
+            <button onClick={() => setStep(1)}>Başlangıca Dön</button>
           </>
         )}
 
         {step === 4 && (
           <>
             <p>4. sayfa</p>
-
             <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
           </>
         )}
