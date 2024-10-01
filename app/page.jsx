@@ -7,19 +7,19 @@ export default function Home() {
   return (
     <>
       <form action={async (formData) => {
-        console.log(formData);
-        const formObj = Object.fromEntries(formData);
-        console.log(formObj);
+        // console.log(formData);
+        // const formObj = Object.fromEntries(formData);
+        // console.log(formObj);
 
-        const response = await BasvuruYapAksiyonu(formObj);
-        console.log(response);
+        // const response = await BasvuruYapAksiyonu(formObj);
+        // console.log(response);
 
-        if (response?.errors) {
-          setErrorsState({
-            errors: response?.errors
-          })
-          return;
-        }
+        // if (response?.errors) {
+        //   setErrorsState({
+        //     errors: response?.errors
+        //   })
+        //   return;
+        // }
 
         setStep(prev => prev + 1)
 
@@ -44,7 +44,7 @@ export default function Home() {
             <label htmlFor="birthday">Doğum Tarihi:</label>
             <input type="date" name="birthday" id="birthday" />
             <br />
-            
+
             <label htmlFor="gender">
               <select name="gender" id="gender">
                 <option value="">Cinsiyetinizi Seçiniz</option>
@@ -58,18 +58,23 @@ export default function Home() {
 
         {step === 2 && (
           <>
+          <p>2. sayfa</p>
           </>
         )}
 
         {step === 3 && (
           <>
+          <p>3. sayfa</p>
           </>
         )}
 
         {step === 4 && (
           <>
+          <p>4. sayfa</p>
           </>
         )}
+
+        <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
       </form>
     </>
   );
