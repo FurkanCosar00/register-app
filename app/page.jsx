@@ -20,9 +20,8 @@ export default function Home() {
         //   })
         //   return;
         // }
-
+        
         setStep(prev => prev + 1)
-
 
       }} className="form-group">
 
@@ -53,28 +52,48 @@ export default function Home() {
                 <option value="other">Diğer</option>
               </select>
             </label>
+
+            <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
           </>
         )}
 
         {step === 2 && (
           <>
-          <p>2. sayfa</p>
+            <label htmlFor="exam">ön sınav puanı:</label>
+            <input type="number" name="exam" id="exam" />
+            <br />
+
+            <label htmlFor="interview">mülakat notları:</label>
+            <textarea name="interview" id="interview" cols="20"></textarea>
+            <br />
+
+            <label htmlFor="interviewScore">mülakat puanı:</label>
+            <input type="number" name="interviewScore" id="interviewScore" />
+            <br />
+
+            <p>mülakattan geçti mi:</p>
+            <input type="radio" id="yes" name="passed" value="yes" />
+            <label htmlFor="yes">yes</label><br />
+
+            <input type="radio" id="no" name="passed" value="no" />
+            <label htmlFor="no">no</label><br />
+
+            <button onClick={{}}>{step === 4 ? "Kaydet" : "İlerle"}</button>
           </>
         )}
 
         {step === 3 && (
           <>
-          <p>3. sayfa</p>
           </>
         )}
 
         {step === 4 && (
           <>
-          <p>4. sayfa</p>
+            <p>4. sayfa</p>
+
+            <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
           </>
         )}
-
-        <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
       </form>
     </>
   );
