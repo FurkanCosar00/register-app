@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import styles from "./page.module.css";
 
@@ -28,6 +29,34 @@ export default function Home() {
         <input type="hidden" name="step" value={step} />
         {step === 1 && (
           <>
+          <label htmlFor="name">
+            <p>Ad: </p>
+            <input type="text" name="name" />
+          </label>
+
+          <label htmlFor="surName">
+            <p>Soyad: </p>
+            <input type="text" name="surName" />
+          </label>
+
+          <label htmlFor="tc">
+            <p>Tc No:</p>
+            <input type="number" name="tc" />
+          </label>
+
+          <label htmlFor="birthday">
+            <p>Doğum Tarihi: </p>
+            <input type="date" name="birthday" />
+          </label>
+
+          <label htmlFor="gender">
+            <select name="gender">
+              <option value="">Cinsiyetinizi Seçiniz</option>
+              <option value="men">Erkek</option>
+              <option value="women">Kadın</option>
+              <option value="other">Diğer</option>
+            </select>
+          </label>
           </>
         )}
 
