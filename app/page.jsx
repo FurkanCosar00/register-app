@@ -84,6 +84,9 @@ export default function Home() {
 
         {step === 3 && (
           <>
+            <p>3. sayfa</p>
+            <h3>form kaydedildi</h3>
+            <button onClick={() => setStep(1)}>deneme</button>
           </>
         )}
 
