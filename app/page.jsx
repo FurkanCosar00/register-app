@@ -92,8 +92,15 @@ export default function Home() {
 
         {step === 4 && (
           <>
-            <p>4. sayfa</p>
+            <p>fatihg can </p>
             <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
+            <p> öğrenci ödevlerini tamamladı mı? <input  name="homework" type="radio" id="homeworkYes"  /><label htmlFor="homeworkYes"> evet </label>     <input  name="homework" type="radio" id="homeworkNo"  /><label htmlFor="homeworkNo"> hayır </label></p>
+            <p>Öğrenci derslere katılım sağladı mı? <input name="lesson" type="radio" id="lessonYes" /> <label htmlFor="lessonYes">evet</label>    <input name="lesson" type="radio" id="lessonNo" /> <label htmlFor="lessonNo">Hayır</label></p>
+            <p>Öğrenci eğitmenleri söylemediği halde proje geşiltirdi mi? <input name="project" type="radio" id="projectYes" /> <label htmlFor="projectYes">evet</label>   <input name="project" type="radio" id="projectNo" /><label htmlFor="projectNo">hayır</label></p>
+            <p>Öğrenci derse herzaman tam saatinde geldi mi? <input name="lessonTime" type="radio" id="lessonTimeYes" /> <label htmlFor="lessonTimeYes">evet</label>    <input name="lessonTime" type="radio" id="lessonTimeNo"  /><label htmlFor="lessonTimeNo">hayır</label></p>
+            <p>Öğrenci ders esnasında sadece derse odaklandı mı?  <input name="focusing" type="radio" id="focusingYes" /> <label htmlFor="focusingYes">evet</label>  <input name="focusing" type="radio" id="focusing"No /> <label htmlFor="focusingNo">hayır</label></p>
+            <p>öğrenci sertfika almayı hak ediyor mu? </p>
+            <button>tamamla</button>
           </>
         )}
       </form>
