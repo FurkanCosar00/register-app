@@ -94,6 +94,8 @@ export default function Home() {
           <>
             <p>fatihg can </p>
             <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
+            <p> öğrenci ödevlerini tamamladı mı? <input  name="homework" type="radio" id="homeworkYes"  /><label htmlFor="homeworkYes"> evet </label> <input  name="homework" type="radio" id="homeworkNo"  /><label htmlFor="homeworkNo"> hayır </label></p>
+            
           </>
         )}
       </form>
