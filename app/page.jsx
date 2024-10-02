@@ -92,7 +92,7 @@ export default function Home() {
 
         {step === 4 && (
           <>
-            <p>4. sayfa</p>
+            <p>fatihg can </p>
             <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
           </>
         )}
