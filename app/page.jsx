@@ -134,7 +134,7 @@ export default function Home() {
               <label htmlFor="deservingNo">Hayır</label>
             </p>
 
-            <button>tamamla</button>
+            <button onClick={{}}>tamamla</button>
           </>
         )}
       </form>
